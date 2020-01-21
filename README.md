@@ -11,3 +11,9 @@ In Docker you should run a MQTT message broker and a database as well as some gl
 MQTT protocol. The glue code picks the numbers from MQTT and writes them into a
 database of your choice inside containers.
 4. Develop a way to show your results.
+
+## Directories
+- GlueCode :
+- MongoDB :
+- Mosquitto :
+- PrimeLauncher :

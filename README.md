@@ -17,3 +17,25 @@ database of your choice inside containers.
 - *MongoDB :* build,sh, run.sh, Dockerfile
 - *Mosquitto :* build,sh, run.sh, Dockerfile
 - *PrimeLauncher :* primeLauncher.py
+
+.
+├── GlueCode
+│   └── glueCode.py
+├── LICENSE
+├── MongoDB
+│   ├── build.sh
+│   ├── Dockerfile
+│   └── run.sh
+├── Mosquitto
+│   ├── build.sh
+│   ├── Dockerfile
+│   ├── run.sh
+│   └── src
+│       └── mosquitto.conf
+├── PrimeLauncher
+│   └── primeLauncher.py
+├── README.md
+├── test
+└── TODO
+
+5 directories, 13 files

@@ -18,21 +18,35 @@ database of your choice inside containers.
 - *Mosquitto :* build,sh, run.sh, Dockerfile
 - *PrimeLauncher :* primeLauncher.py
 
+.. code::
 .
-|-- GlueCode
-|   `-- glueCode.py
-|-- MongoDB
-|   |-- build.sh
-|   |-- Dockerfile
-|   `-- run.sh
-|-- Mosquitto
-|   |-- src
-|   |   `-- mosquitto.conf
-|   |-- build.sh
-|   |-- Dockerfile
-|   `-- run.sh
-|-- PrimeLauncher
-|   `-- primeLauncher.py
-|-- LICENSE
-|-- README.md
-`-- TODO
+|-- ContentStore
+|   |-- de-DE
+|   |   |-- art.mshc
+|   |   |-- artnoloc.mshc
+|   |   |-- clientserver.mshc
+|   |   |-- noarm.mshc
+|   |   |-- resources.mshc
+|   |   `-- windowsclient.mshc
+|   `-- en-US
+|       |-- art.mshc
+|       |-- artnoloc.mshc
+|       |-- clientserver.mshc
+|       |-- noarm.mshc
+|       |-- resources.mshc
+|       `-- windowsclient.mshc
+`-- IndexStore
+    |-- de-DE
+    |   |-- art.mshi
+    |   |-- artnoloc.mshi
+    |   |-- clientserver.mshi
+    |   |-- noarm.mshi
+    |   |-- resources.mshi
+    |   `-- windowsclient.mshi
+    `-- en-US
+        |-- art.mshi
+        |-- artnoloc.mshi
+        |-- clientserver.mshi
+        |-- noarm.mshi
+        |-- resources.mshi
+        `-- windowsclient.mshi

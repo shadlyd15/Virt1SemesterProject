@@ -1,0 +1,2 @@
+FROM mongodb
+EXPOSE 27017

@@ -15,5 +15,5 @@ database of your choice inside containers.
 ## Directories
 - **GlueCode :** glueCode.py
 - **MongoDB :** build,sh, run.sh, Dockerfile
-- **Mosquitto :** build,sh, run.sh, Dockerfile
+- **Mosquitto :** build,sh, run.sh, Dockerfile, src/mosquitto.conf
 - **PrimeLauncher :** primeLauncher.py

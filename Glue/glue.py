@@ -20,26 +20,31 @@
 # import context  # Ensures paho is in PYTHONPATH
 import paho.mqtt.client as mqtt
 import pymongo as PyMongo
+from datetime import datetime
 
-client = PyMongo.MongoClient('localhost', 27017);
+dbClient = PyMongo.MongoClient('localhost', 27017);
 
-db = client.prime_db_test
+db = dbClient.prime_db_test
 primes = db.primes
 
 def print_primes():
+	count = 0
 	for document in primes.find():
-		if 'TP' in document:
-			print document['TP']
+		if all (k in document for k in ("TPrime","TimeStamp")):
+			print("Prime : " + str(document['TPrime']) + ", TimeStamp : " + str(document['TimeStamp']))
+			count += 1
+	print("Total " + str(count) + " Entries Found in Database\r\n")
 
 def on_connect(mqttc, obj, flags, rc):
     print("MQTT Client Connected")
 
 def on_message(mqttc, obj, msg):
 	# nonlocal primes
-	print(msg.topic + " : " + str(msg.payload))
-	result = primes.insert_one({'Topic': msg.topic, 'TP':msg.payload})
-	# print('One post: {0}'.format(result.inserted_id))
-	print_primes()
+	print("New Prime Received")
+	print(msg.topic + " : " + str(msg.payload) + " TimeStamp : " + datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+	result = primes.insert_one({'TPrime':msg.payload, 'TimeStamp':datetime.now().strftime("%m/%d/%Y, %H:%M:%S")})
+	print('Inserted Id : {0}'.format(result.inserted_id))
+	# print_primes()
 
 def on_subscribe(mqttc, obj, mid, granted_qos):
 	print("Subscribed")
@@ -49,8 +54,7 @@ mqttc.on_message = on_message
 mqttc.on_connect = on_connect
 
 mqttc.connect("localhost", 1883, 60)
-mqttc.subscribe("TEST", 0)
-
+mqttc.subscribe("Prime", 0)
 
 
 mqttc.loop_forever()

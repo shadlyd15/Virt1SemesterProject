@@ -13,40 +13,7 @@ database of your choice inside containers.
 4. Develop a way to show your results.
 
 ## Directories
-- *GlueCode :* glueCode.py
-- *MongoDB :* build,sh, run.sh, Dockerfile
-- *Mosquitto :* build,sh, run.sh, Dockerfile
-- *PrimeLauncher :* primeLauncher.py
-
-.. code::
-.
-|-- ContentStore
-|   |-- de-DE
-|   |   |-- art.mshc
-|   |   |-- artnoloc.mshc
-|   |   |-- clientserver.mshc
-|   |   |-- noarm.mshc
-|   |   |-- resources.mshc
-|   |   `-- windowsclient.mshc
-|   `-- en-US
-|       |-- art.mshc
-|       |-- artnoloc.mshc
-|       |-- clientserver.mshc
-|       |-- noarm.mshc
-|       |-- resources.mshc
-|       `-- windowsclient.mshc
-`-- IndexStore
-    |-- de-DE
-    |   |-- art.mshi
-    |   |-- artnoloc.mshi
-    |   |-- clientserver.mshi
-    |   |-- noarm.mshi
-    |   |-- resources.mshi
-    |   `-- windowsclient.mshi
-    `-- en-US
-        |-- art.mshi
-        |-- artnoloc.mshi
-        |-- clientserver.mshi
-        |-- noarm.mshi
-        |-- resources.mshi
-        `-- windowsclient.mshi
+- **GlueCode :** glueCode.py
+- **MongoDB :** build,sh, run.sh, Dockerfile
+- **Mosquitto :** build,sh, run.sh, Dockerfile
+- **PrimeLauncher :** primeLauncher.py

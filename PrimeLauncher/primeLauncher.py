@@ -60,7 +60,7 @@ Input :	""")
 	elif option.lower() == 'p' :
 		prime = nth_prime_number(prime_count)
 		print("Publishing " + str(prime_count) + "th Prime " + str(prime) + " : { " + "Prime : " + str(prime) + " }")
-		mqttClient.publish("Prime", prime)
+		mqttClient.publish("Prime", str(prime))
 		prime_count += 1
 	elif option.lower() == 'q' :
 		print("Quiting...")

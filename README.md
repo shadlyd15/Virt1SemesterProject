@@ -13,7 +13,7 @@ database of your choice inside containers.
 4. Develop a way to show your results.
 
 ## Directories
-- GlueCode :
-- MongoDB :
-- Mosquitto :
-- PrimeLauncher :
+- *GlueCode :* glueCode.py
+- *MongoDB :* build,sh, run.sh, Dockerfile
+- *Mosquitto :* build,sh, run.sh, Dockerfile
+- *PrimeLauncher :* primeLauncher.py

@@ -1,5 +1,6 @@
 #!/usr/bin/python
-
+# -*- coding: utf-8 -*-
+import os
 import paho.mqtt.client as mqtt
 import pymongo as PyMongo
 
@@ -23,8 +24,13 @@ def on_connect(mqttClient, obj, flags, rc):
 
 def on_message(mqttClient, obj, msg):
 	print("New Prime Received")
-	print(msg.topic + " : " + str(msg.payload) + " TimeStamp : " + datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
-	result = primes.insert_one({'TPrime':msg.payload, 'TimeStamp':datetime.now().strftime("%m/%d/%Y, %H:%M:%S")})
+	if os.environ.get('APP_ENV') == 'docker':
+		message = str(msg.payload, 'utf-8')
+	else :
+		message = str(msg.payload)
+
+	print(msg.topic + " : " + message + " TimeStamp : " + datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+	result = primes.insert_one({'TPrime':message, 'TimeStamp':datetime.now().strftime("%m/%d/%Y, %H:%M:%S")})
 	print('Inserted Id : {0}'.format(result.inserted_id))
 
 def on_subscribe(mqttClient, obj, mid, granted_qos):

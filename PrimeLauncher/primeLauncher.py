@@ -49,7 +49,7 @@ def is_prime(num):
 
 prime_count = 1
 while True:
-	option = raw_input("""
+	option = input("""
 Press 's' to print primes from database
 Press 'p' to publish new prime to mqtt broker
 Press 'q' to quit

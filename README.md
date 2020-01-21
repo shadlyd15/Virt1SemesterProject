@@ -16,4 +16,23 @@ database of your choice inside containers.
 - **GlueCode :** glueCode.py
 - **MongoDB :** build,sh, run.sh, Dockerfile
 - **Mosquitto :** build,sh, run.sh, Dockerfile, src/mosquitto.conf
-- **PrimeLauncher :** primeLauncher.py
+- **PrimeLauncher :** primeLauncher.py, build,sh, run.sh, Dockerfile
+
+## Build & Run Containers
+Every folders have three files in common.
+
+- Dockerfile
+- build.sh
+- run.sh
+
+### To Build
+```bash
+sudo chmod a+x build.sh # If the file is not yet executable
+sudo ./build.sh
+```
+
+### To Run
+```bash
+sudo chmod a+x run.sh # If the file is not yet executable
+sudo ./run.sh
+```

@@ -1,1 +1,1 @@
-sudo docker run --net="host" glue
+sudo docker run -it --net="host" glue

@@ -1,5 +1,5 @@
-# Semester Project
-## Virtualization 1 WS2019 / 2020 - Bergische Universität Wuppertal
+# Semester Project - Virtualization 1 WS2019 / 2020
+## Bergische Universität Wuppertal
 
 ### Project 
 In Docker you should run a MQTT message broker and a database as well as some glue code (3 containers)

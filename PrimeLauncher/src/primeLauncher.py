@@ -12,8 +12,8 @@ def print_primes():
 	count = 0
 	print("\r\n**** Prime Numbers Retrieved from MongoDB ****")
 	for document in primes.find():
-		if all (k in document for k in ("TPrime","TimeStamp")):
-			print("Prime : " + str(document['TPrime']) + ", TimeStamp : " + str(document['TimeStamp']))
+		if all (k in document for k in ("Prime","TimeStamp")):
+			print("Prime : " + str(document['Prime']) + ", TimeStamp : " + str(document['TimeStamp']))
 			count += 1
 	print("Total " + str(count) + " Entries Found in Database\r\n")
 

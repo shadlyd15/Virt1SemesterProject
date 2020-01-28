@@ -10,6 +10,7 @@ primes = dbClient.primes
 
 def print_primes():
 	count = 0
+	print("\r\n**** Prime Numbers Retrieved from MongoDB ****")
 	for document in primes.find():
 		if all (k in document for k in ("TPrime","TimeStamp")):
 			print("Prime : " + str(document['TPrime']) + ", TimeStamp : " + str(document['TimeStamp']))
@@ -27,6 +28,9 @@ def on_disconnect(mqttClient, userdata, rc):
 
 def on_subscribe(mqttClient, obj, mid, granted_qos):
 	print("Subscribed")
+
+# The following prime number generator code is taken from stackoverflow answer by Khaled Hamed
+# Link : https://codereview.stackexchange.com/questions/158925/generate-nth-prime-number-in-python
 
 def nth_prime_number(n):
     if n==1:
@@ -47,6 +51,7 @@ def is_prime(num):
         factor +=1
     return True
 
+# Prime number generator code ends here
 
 mqttClient = mqtt.Client()
 mqttClient.connected = False

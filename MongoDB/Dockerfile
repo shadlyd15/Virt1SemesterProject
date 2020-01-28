@@ -1,2 +1,2 @@
-FROM mongodb
+FROM mongo
 EXPOSE 27017
